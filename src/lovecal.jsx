@@ -23,7 +23,7 @@ const LoveCalculator = () => {
       return;
     }
 
-    if(name1.toLowerCase() === "randi" || name2.toLowerCase() === "randi"){
+    if(name1.toLowerCase().trim() === "randi" || name2.toLowerCase().trim() === "randi"){
         setLovePercentage(100);
         setLoveMessage("Generating a romantic message...");
         setLoveMessage("Bhai kya kar rahe ho? 🤣");
@@ -31,12 +31,13 @@ const LoveCalculator = () => {
     }
      
 
-    if(frindname.includes(name1.toLowerCase()) || frindname.includes(name2.toLowerCase())){
+    if(frindname.includes(name1.toLowerCase().trim()) || frindname.includes(name2.toLowerCase().trim())) {
         setLovePercentage((Math.floor(Math.random() * 6))+ 95);
         setTimeout(() => {
-          setLoveMessage("Generating a romantic message...");
+          setLoveMessage("Apna sakal dekho pehle! 😂");
         }, 2000);
-        setLoveMessage("Apna sakal dekho pehle! 😂");
+          
+        setLoveMessage("Generating a romantic message...");
         return;
     }
 
