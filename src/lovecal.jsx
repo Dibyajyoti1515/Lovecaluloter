@@ -11,20 +11,20 @@ const LoveCalculator = () => {
   const [lovePercentage, setLovePercentage] = useState(null);
   const [loveMessage, setLoveMessage] = useState("");
 
-  const frindname = ["Ashwinee", "Sushil", "Sujan", "Suman", "Sushant"];
+  const frindname = ["mutthal", "randi", "bibhu", "ashwin", "siddhanta"];
   const calculateLove = async () => {
     if (name1.trim() === "" || name2.trim() === "") {
       alert("Please enter both names!");
       return;
     }
-    const randomLove = Math.floor(Math.random() * 101);
+    const randomLove = Math.floor(Math.random() * 31) + 70;
     if(name1.toLowerCase() === name2.toLowerCase()) {
-      setLovePercentage(100);
+      setLovePercentage(-100);
       return;
     }
 
-    if(frindname.includes(name1) || frindname.includes(name2)){
-        setLovePercentage((Math.floor(Math.random() * 31))+ 70);
+    if(frindname.includes(name1.toLowerCase()) || frindname.includes(name2.toLowerCase())){
+        setLovePercentage((Math.floor(Math.random() * 6))+ 95);
         return;
     }
 
