@@ -29,14 +29,18 @@ const LoveCalculator = () => {
         setLoveMessage("Bhai kya kar rahe ho? 🤣");
         return;
     }
+     
 
     if(frindname.includes(name1.toLowerCase()) || frindname.includes(name2.toLowerCase())){
         setLovePercentage((Math.floor(Math.random() * 6))+ 95);
+        setTimeout(() => {
+          setLoveMessage("Generating a romantic message...");
+        }, 2000);
+        setLoveMessage("Apna sakal dekho pehle! 😂");
         return;
     }
 
     setLovePercentage(randomLove);
-     
       try {
         setLoveMessage("Generating a romantic message...");
         const response = await fetch(
