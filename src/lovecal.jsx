@@ -11,7 +11,7 @@ const LoveCalculator = () => {
   const [lovePercentage, setLovePercentage] = useState(null);
   const [loveMessage, setLoveMessage] = useState("");
 
-  const frindname = ["mutthal", "randi", "bibhu", "ashwin", "siddhanta"];
+  const frindname = ["mutthal", "bibhu", "ashwin", "siddhanta"];
   const calculateLove = async () => {
     if (name1.trim() === "" || name2.trim() === "") {
       alert("Please enter both names!");
@@ -23,6 +23,13 @@ const LoveCalculator = () => {
       return;
     }
 
+    if(name1.toLowerCase() === "randi" || name2.toLowerCase() === "randi"){
+        setLovePercentage(100);
+        setLoveMessage("Generating a romantic message...");
+        setLoveMessage("Bhai kya kar rahe ho? 🤣");
+        return;
+    }
+
     if(frindname.includes(name1.toLowerCase()) || frindname.includes(name2.toLowerCase())){
         setLovePercentage((Math.floor(Math.random() * 6))+ 95);
         return;
@@ -30,8 +37,8 @@ const LoveCalculator = () => {
 
     setLovePercentage(randomLove);
      
-     
-    try {
+      try {
+        setLoveMessage("Generating a romantic message...");
         const response = await fetch(
           `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=AIzaSyBWNcHYHHGsgTWqqcnT5rkVlaL_PTYF25Q`,
           {
@@ -55,7 +62,7 @@ const LoveCalculator = () => {
           }
         );
   
-        const data = await response.json();
+      const data = await response.json();
 
     if (data?.candidates?.[0]?.content?.parts?.[0]?.text) {
       setLoveMessage(data.candidates[0].content.parts[0].text);
@@ -66,6 +73,7 @@ const LoveCalculator = () => {
     console.error("Error fetching AI message:", error);
     setLoveMessage("Love is a mystery beyond words! 💞");
   }
+ 
  }
 
   
@@ -98,7 +106,8 @@ const LoveCalculator = () => {
             <div>
                 <button
                     className="button1"
-                    onClick={calculateLove}
+                    onClick={() => calculateLove()}
+                    type="button"
                 >
                     Calculate
                 </button>
