@@ -1,9 +1,9 @@
-import React, { useState } from "react";
+import  { useState } from "react";
 import "./lovelcal.css";
 
-import { GoogleGenerativeAI } from "@google/generative-ai";
+// import { GoogleGenerativeAI } from "@google/generative-ai";
 
-const genAI = new GoogleGenerativeAI("AIzaSyBWNcHYHHGsgTWqqcnT5rkVlaL_PTYF25Q"); // Replace this
+// const genAI = new GoogleGenerativeAI("AIzaSyBWNcHYHHGsgTWqqcnT5rkVlaL_PTYF25Q"); // Replace this
 
 const LoveCalculator = () => {
   const [name1, setName1] = useState("");
@@ -11,7 +11,7 @@ const LoveCalculator = () => {
   const [lovePercentage, setLovePercentage] = useState(null);
   const [loveMessage, setLoveMessage] = useState("");
 
-  const frindname = ["mutthal", "bibhu", "ashwin", "siddhanta"];
+  const frindname = ["mutthal", "bibhu", "ashwin", "siddhanta", "siddhant", "siddharth","akash","saikrishna","sai krishna","sai"];
   const calculateLove = async () => {
     if (name1.trim() === "" || name2.trim() === "") {
       alert("Please enter both names!");
@@ -32,7 +32,7 @@ const LoveCalculator = () => {
      
 
     if(frindname.includes(name1.toLowerCase().trim()) || frindname.includes(name2.toLowerCase().trim())) {
-        setLovePercentage((Math.floor(Math.random() * 6))+ 95);
+        setLovePercentage((Math.floor(Math.random() * 5))+ 96);
         setTimeout(() => {
           setLoveMessage("Apna sakal dekho pehle! 😂");
         }, 2000);
