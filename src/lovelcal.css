@@ -1,0 +1,61 @@
+body {
+    background: linear-gradient(45deg, #ff6b6b, #ff8e8e);
+    /* Fallback for older browsers */
+    background: linear-gradient(45deg, 
+        #ff6b6b,  /* Warm pink-red */
+        #ff8e8e   /* Soft coral */
+    );
+    min-height: 100vh;
+    color: white; /* For better text contrast */
+}
+
+.CardContent{
+    display: flex;
+    flex-direction: column;
+    justify-content:space-evenly;
+    align-items: center;
+    margin-top: 10%;
+    margin-bottom: 10%;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.125);
+    height: 70vh;
+    width: 70vh;
+}
+
+.input1name{
+    width: 100%;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.125);
+    background: rgb(223, 220, 220);
+    color: rgb(0, 0, 0);
+}
+
+.button1{
+    width: 100%;
+    padding: 10px 30px;
+    margin: 10px;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.125);
+    background: rgb(223, 220, 220);
+    color: rgb(255, 0, 0);
+    font-weight: bold;
+}
+
+@media (max-width: 468px) {
+    .CardContent{
+        height: 70vh;
+        width: 70vw;
+    }
+    .input1name{
+        font-size: larger;
+
+    }
+    .button1{
+        font-size: larger;
+    }
+}
